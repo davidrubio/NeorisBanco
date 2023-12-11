@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "1e4eba9d-e41d-4285-afc0-6275b08bce86",
+		"name": "NeorisBanco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3550369",
+		"_collection_link": "https://martian-zodiac-133125.postman.co/workspace/Froddi~80fc3b7f-f06e-4a53-9134-419118f0280c/collection/3550369-1e4eba9d-e41d-4285-afc0-6275b08bce86?action=share&source=collection_link&creator=3550369"
+	},
+	"item": [
+		{
+			"name": "api/Cliente/dameClientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:63026/api/Cliente/dameClientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "63026",
+					"path": [
+						"api",
+						"Cliente",
+						"dameClientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cliente/dameCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:63026/api/Cliente/dameCliente/1721600532",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "63026",
+					"path": [
+						"api",
+						"Cliente",
+						"dameCliente",
+						"1721600532"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cliente/creaCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombres\": \"Ivonne Hidalgo\",\r\n    \"edad\": 30,\r\n    \"identificacion\": \"1727275057\",\r\n    \"direccion\": \"Conocoto y Gonzalez Suarez\",\r\n    \"telefono\": \"0984417275\",\r\n    \"secuencialGenero\": 2,\r\n    \"clave\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:63026/api/Cliente/creaCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "63026",
+					"path": [
+						"api",
+						"Cliente",
+						"creaCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cliente/editaCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"secuencial\": 9,\r\n    \"nombres\": \"Ivonne Hidalgo B.\",\r\n    \"edad\": 30,\r\n    \"identificacion\": \"1727275057\",\r\n    \"direccion\": \"Conocoto y Gonzalez Suarez\",\r\n    \"telefono\": \"0984417275\",\r\n    \"secuencialGenero\": 2,\r\n    \"clave\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:63026/api/Cliente/editaCliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "63026",
+					"path": [
+						"api",
+						"Cliente",
+						"editaCliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cliente/eliminaCliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:63026/api/Cliente/eliminaCliente/1727275057",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "63026",
+					"path": [
+						"api",
+						"Cliente",
+						"eliminaCliente",
+						"1727275057"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cuenta/dameCuentas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18877/api/Cuenta/dameCuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Cuenta",
+						"dameCuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cuenta/dameCuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18877/api/Cuenta/dameCuenta/22225",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Cuenta",
+						"dameCuenta",
+						"22225"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cuenta/creaCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"secuencial\": 0,\r\n  \"identificacion\": \"1721600532\",\r\n  \"secuencialTipoCuenta\": 2,\r\n  \"saldoActual\": 100,\r\n  \"secuencialTipoCanal\": 2,\r\n  \"estaActivo\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18877/api/Cuenta/creaCuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Cuenta",
+						"creaCuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cuenta/editaCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"secuencial\": 5,\r\n  \"identificacion\": \"1721600532\",\r\n  \"secuencialTipoCuenta\": 3,\r\n  \"saldoActual\": 100,\r\n  \"secuencialTipoCanal\": 2,\r\n  \"estaActivo\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18877/api/Cuenta/editaCuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Cuenta",
+						"editaCuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Cuenta/eliminaCuenta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18877/api/Cuenta/eliminaCuenta/2023121121",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Cuenta",
+						"eliminaCuenta",
+						"2023121121"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Movimiento/creaMovimientoTransaccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCuenta\": \"2023121111\",\r\n  \"secuencialTipoMovimiento\": 1,\r\n  \"secuencialTipoCanal\": 1,\r\n  \"fechaMovimiento\": \"2023-12-11T13:29:10.661Z\",\r\n  \"valor\": 10,\r\n  \"detalle\": \"detalle prueba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:18877/api/Movimiento/creaMovimientoTransaccion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Movimiento",
+						"creaMovimientoTransaccion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/Reporte/porRangoFechas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18877/api/Reporte/porRangoFechas?fechaInicio=12-10-2023&fechaFin=12-12-2023",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18877",
+					"path": [
+						"api",
+						"Reporte",
+						"porRangoFechas"
+					],
+					"query": [
+						{
+							"key": "fechaInicio",
+							"value": "12-10-2023"
+						},
+						{
+							"key": "fechaFin",
+							"value": "12-12-2023"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

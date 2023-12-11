@@ -34,9 +34,10 @@ namespace Neoris.Cliente.Manager
                 {
                     Persona persona = new Persona();
                     bool esNuevo = false;
-                    if (request.Secuencial > 0)
+                    var clienteExiste = _context.Cliente.Include(x => x.Persona).ThenInclude(c => c.Genero).ToList().FirstOrDefault(x => x.Persona.Identificacion == request.Identificacion && x.EstaActivo);
+                    if (clienteExiste != null)
                     {
-                        persona = _context.Persona.Where(x => x.Secuencial == request.Secuencial).FirstOrDefault();
+                        persona = _context.Persona.Where(x => x.Secuencial == clienteExiste.Persona.Secuencial).FirstOrDefault();
                         if (persona != null)
                         {
                             persona.Nombres = request.Nombres;
@@ -81,10 +82,8 @@ namespace Neoris.Cliente.Manager
                             _context.Cliente.Add(cliente);
                             _context.SaveChanges();
                         }
-                        else
-                            return false;
                     }
-
+                    transaction.Commit();
                 }
                 catch (Exception ex)
                 {

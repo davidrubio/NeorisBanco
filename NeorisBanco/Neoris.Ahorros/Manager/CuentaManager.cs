@@ -90,6 +90,7 @@ namespace Neoris.Cliente.Manager
                         _context.SaveChanges();
 
                     }
+                    transaction.Commit();
                     return cuenta.NumeroCuenta;
                 }
                 catch (Exception ex)

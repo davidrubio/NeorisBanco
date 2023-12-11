@@ -52,6 +52,7 @@ namespace Neoris.Cliente.Manager
                     _context.Movimiento.Add(movimiento);
                     _context.SaveChanges();
 
+                    transaction.Commit();
                     return "Transaccion finalizada con exito";
                 }
                 catch (Exception ex)
