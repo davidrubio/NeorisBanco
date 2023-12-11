@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jyI9DL2s7mKcH6HQ/FKS69wbQSM86P1ajeoCjHMs0GFveuLyQUAmRyqnT35KfuBdMHJ2e25gO93SLdFrIAUbsg==",
+  "dgSpecHash": "MkThp2vEDL/HPkJQg6iJJIye/JMgxxicCfAeXjoDclopEgR5re1xkwinNvLeHFlAN/2FW6X+Uapzyj37v3vmeQ==",
   "success": true,
-  "projectFilePath": "C:\\David\\Neoris\\NeorisBanco\\Neoris.Cliente\\Neoris.Cliente.csproj",
+  "projectFilePath": "C:\\David\\CodigoGit\\NeorisBanco\\NeorisBanco\\Neoris.Cliente\\Neoris.Cliente.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david.rubio\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\david.rubio\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

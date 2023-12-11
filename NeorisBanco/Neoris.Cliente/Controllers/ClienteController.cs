@@ -28,7 +28,7 @@ namespace Neoris.Cliente.Controllers
             }
             catch (Exception e)
             {
-                return Ok(UtilidadesGenericas.CrearRespuestaGenericaError(clientes, e.Message));
+                return BadRequest(UtilidadesGenericas.CrearRespuestaGenericaError(clientes, e.Message));
             }
         }
 
@@ -43,7 +43,7 @@ namespace Neoris.Cliente.Controllers
             }
             catch (Exception e)
             {
-                return Ok(UtilidadesGenericas.CrearRespuestaGenericaError(clientes, e.Message));
+                return BadRequest(UtilidadesGenericas.CrearRespuestaGenericaError(clientes, e.Message));
             }
         }
 
@@ -57,7 +57,7 @@ namespace Neoris.Cliente.Controllers
             }
             catch (Exception e)
             {
-                return Ok(UtilidadesGenericas.CrearRespuestaGenericaError(false, e.Message));
+                return BadRequest(UtilidadesGenericas.CrearRespuestaGenericaError(false, e.Message));
             }
         }
 
@@ -71,7 +71,7 @@ namespace Neoris.Cliente.Controllers
             }
             catch (Exception e)
             {
-                return Ok(UtilidadesGenericas.CrearRespuestaGenericaError(false, e.Message));
+                return BadRequest(UtilidadesGenericas.CrearRespuestaGenericaError(false, e.Message));
             }
         }
 
@@ -85,7 +85,7 @@ namespace Neoris.Cliente.Controllers
             }
             catch (Exception e)
             {
-                return Ok(UtilidadesGenericas.CrearRespuestaGenericaError(false, e.Message));
+                return BadRequest(UtilidadesGenericas.CrearRespuestaGenericaError(false, e.Message));
             }
         }
     }

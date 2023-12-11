@@ -28,59 +28,71 @@ namespace Neoris.Cliente.Manager
 
         public bool CreaEditaClientes(CreaClienteRequest request)
         {
-            Persona persona = new Persona();
-            bool esNuevo = false;
-            if (request.Secuencial > 0)
+            using (var transaction = _context.Database.BeginTransaction())
             {
-                persona = _context.Persona.Where(x => x.Secuencial == request.Secuencial).FirstOrDefault();
-                if (persona != null)
+                try
                 {
-                    persona.Nombres = request.Nombres;
-                    persona.SecuencialGenero = request.SecuencialGenero;
-                    persona.Edad = request.Edad;
-                    persona.Identificacion = request.Identificacion;
-                    persona.Direccion = request.Direccion;
-                    persona.Telefono = request.Telefono;
-                    _context.SaveChanges();
-                    Models.Cliente cli = _context.Cliente.Where(x => x.SecuencialPersona == persona.Secuencial).FirstOrDefault();
-                    if (cli != null)
+                    Persona persona = new Persona();
+                    bool esNuevo = false;
+                    if (request.Secuencial > 0)
                     {
-                        cli.Clave = request.Clave;
-                        _context.SaveChanges();
+                        persona = _context.Persona.Where(x => x.Secuencial == request.Secuencial).FirstOrDefault();
+                        if (persona != null)
+                        {
+                            persona.Nombres = request.Nombres;
+                            persona.SecuencialGenero = request.SecuencialGenero;
+                            persona.Edad = request.Edad;
+                            persona.Identificacion = request.Identificacion;
+                            persona.Direccion = request.Direccion;
+                            persona.Telefono = request.Telefono;
+                            _context.SaveChanges();
+                            Models.Cliente cli = _context.Cliente.Where(x => x.SecuencialPersona == persona.Secuencial).FirstOrDefault();
+                            if (cli != null)
+                            {
+                                cli.Clave = request.Clave;
+                                _context.SaveChanges();
+                            }
+                        }
+                        else
+                            esNuevo = true;
                     }
+                    else
+                        esNuevo = true;
+
+
+                    if (esNuevo)
+                    {
+                        persona = new Persona();
+                        persona.Nombres = request.Nombres;
+                        persona.SecuencialGenero = request.SecuencialGenero;
+                        persona.Edad = request.Edad;
+                        persona.Identificacion = request.Identificacion;
+                        persona.Direccion = request.Direccion;
+                        persona.Telefono = request.Telefono;
+                        _context.Persona.Add(persona);
+                        _context.SaveChanges();
+
+                        if (persona.Secuencial != 0)
+                        {
+                            Models.Cliente cliente = new Models.Cliente();
+                            cliente.SecuencialPersona = persona.Secuencial;
+                            cliente.Clave = request.Clave;
+                            cliente.EstaActivo = true;
+                            _context.Cliente.Add(cliente);
+                            _context.SaveChanges();
+                        }
+                        else
+                            return false;
+                    }
+
                 }
-                else
-                    esNuevo = true;
-            }
-            else
-                esNuevo = true;
-
-
-            if (esNuevo)
-            {
-                persona = new Persona();
-                persona.Nombres = request.Nombres;
-                persona.SecuencialGenero = request.SecuencialGenero;
-                persona.Edad = request.Edad;
-                persona.Identificacion = request.Identificacion;
-                persona.Direccion = request.Direccion;
-                persona.Telefono = request.Telefono;
-                _context.Persona.Add(persona);
-                _context.SaveChanges();
-
-                if (persona.Secuencial != 0)
+                catch (Exception ex)
                 {
-                    Models.Cliente cliente = new Models.Cliente();
-                    cliente.SecuencialPersona = persona.Secuencial;
-                    cliente.Clave = request.Clave;
-                    cliente.EstaActivo = true;
-                    _context.Cliente.Add(cliente);
-                    _context.SaveChanges();
+                    transaction.Rollback(); 
+                    throw ;
                 }
-                else
-                    return false;
+                return true;
             }
-            return true;
         }
 
         public bool EliminaCliente(string identificacion)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\David\\Neoris\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj": {}
+    "C:\\David\\CodigoGit\\NeorisBanco\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj": {}
   },
   "projects": {
-    "C:\\David\\Neoris\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj": {
+    "C:\\David\\CodigoGit\\NeorisBanco\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\David\\Neoris\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj",
+        "projectUniqueName": "C:\\David\\CodigoGit\\NeorisBanco\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj",
         "projectName": "Neoris.Ahorros",
-        "projectPath": "C:\\David\\Neoris\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj",
+        "projectPath": "C:\\David\\CodigoGit\\NeorisBanco\\NeorisBanco\\Neoris.Ahorros\\Neoris.Ahorros.csproj",
         "packagesPath": "C:\\Users\\david.rubio\\.nuget\\packages\\",
-        "outputPath": "C:\\David\\Neoris\\NeorisBanco\\Neoris.Ahorros\\obj\\",
+        "outputPath": "C:\\David\\CodigoGit\\NeorisBanco\\NeorisBanco\\Neoris.Ahorros\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\david.rubio\\AppData\\Roaming\\NuGet\\NuGet.Config",
